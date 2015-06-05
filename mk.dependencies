@@ -1,0 +1,10 @@
+[
+  {
+    "repository": "android_vendor_samsung_kltekdi",
+    "target_path": "vendor/samsung/kltekdi"
+  },
+  {
+    "repository": "android_device_samsung_klte-common",
+    "target_path": "device/samsung/klte-common"
+  }
+]
