@@ -18,13 +18,16 @@
 TARGET_OTA_ASSERT_DEVICE := kltekdi,klte
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/klte/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/kltekdi/mkbootimg.mk
 TARGET_KERNEL_VARIANT_CONFIG := msm8974pro_sec_klte_kdi_defconfig
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/samsung/kltekdi/init/init_klte.c
 TARGET_UNIFIED_DEVICE := true
+
+# NFC
+BOARD_NFC_CHIPSET := pn547
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
