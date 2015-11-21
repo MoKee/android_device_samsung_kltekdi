@@ -15,7 +15,7 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from kltespr device
+# Inherit from kltekdi device
 $(call inherit-product, device/samsung/kltekdi/device.mk)
 
 # FeliCa vendor tree
