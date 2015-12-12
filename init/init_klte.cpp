@@ -36,6 +36,18 @@
 
 #include "init_msm.h"
 
+void cdma_properties(const char default_cdma_sub[], const char operator_numeric[],
+        const char operator_alpha[])
+{
+    property_set("ril.subscription.types", "NV,RUIM");
+    property_set("ro.cdma.home.operator.numeric", operator_numeric);
+    property_set("ro.cdma.home.operator.alpha", operator_alpha);
+    property_set("ro.telephony.default_cdma_sub", default_cdma_sub);
+    property_set("ro.telephony.default_network", "5");
+    property_set("ro.telephony.ril.v3", "newDriverCallU,newDialCode");
+    property_set("telephony.lteOnCdmaDevice", "1");
+}
+
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
     char platform[PROP_VALUE_MAX];
@@ -66,14 +78,4 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
 }
 
-void cdma_properties(char default_cdma_sub[], char operator_numeric[],
-        char operator_alpha[])
-{
-    property_set("ril.subscription.types", "NV,RUIM");
-    property_set("ro.cdma.home.operator.numeric", operator_numeric);
-    property_set("ro.cdma.home.operator.alpha", operator_alpha);
-    property_set("ro.telephony.default_cdma_sub", default_cdma_sub);
-    property_set("ro.telephony.default_network", "5");
-    property_set("ro.telephony.ril.v3", "newDriverCallU,newDialCode");
-    property_set("telephony.lteOnCdmaDevice", "1");
-}
+
