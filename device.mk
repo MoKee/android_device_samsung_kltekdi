@@ -22,5 +22,8 @@ $(call inherit-product-if-exists, vendor/samsung/kltekdi/kltekdi-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# NFC
+DEVICE_NFC_SONY=yes
+
 # common klte
 $(call inherit-product, device/samsung/klte-common/klte.mk)
