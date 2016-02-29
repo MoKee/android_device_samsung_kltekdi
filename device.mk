@@ -22,6 +22,11 @@ $(call inherit-product-if-exists, vendor/samsung/kltekdi/kltekdi-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Felicia
+PRODUCT_PACKAGES += \
+    init.target.rc \
+    init.felicia.sh
+
 # NFC
 DEVICE_NFC_SONY=yes
 

@@ -18,6 +18,7 @@
 TARGET_OTA_ASSERT_DEVICE := kltekdi,klte
 
 # Kernel
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
 TARGET_KERNEL_VARIANT_CONFIG := msm8974pro_sec_klte_kdi_defconfig
 
 # Init
