@@ -32,6 +32,9 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.felicia.sh
 
+PRODUCT_PACKAGES += \
+    NfcSony
+
 # NFC
 DEVICE_NFC_SONY=yes
 
