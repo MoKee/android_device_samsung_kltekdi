@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2016 The Mokee OpenSource Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,7 +31,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Felicia
 PRODUCT_PACKAGES += \
     init.target.rc \
-    init.felicia.sh
+    init.felica.sh
 
 PRODUCT_PACKAGES += \
     NfcSony
