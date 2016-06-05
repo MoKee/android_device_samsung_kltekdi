@@ -1,8 +1,5 @@
 #!/system/bin/sh
 
-#/sbin/setpropex ro.warranty_bit 0
-#/sbin/setpropex ro.emmc_checksum 0
-
 KBC_DATA_PATH=/data/media/0/kbc
 
 CMDLINE_FILE=$KBC_DATA_PATH/cmdline
