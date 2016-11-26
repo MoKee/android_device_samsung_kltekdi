@@ -372,15 +372,12 @@ public class NativeNfcManager implements DeviceHost {
     }
 
     private void notifyConnectivityListeners() {
-        //mListener.onConnectivityEvent();
     }
 
     private void notifySeApduReceived(byte[] apdu) {
-        //mListener.onSeApduReceived(apdu);
     }
 
     private void notifySeEmvCardRemoval() {
-        //mListener.onSeEmvCardRemoval();
     }
 
     private void notifySeFieldActivated() {
@@ -392,28 +389,23 @@ public class NativeNfcManager implements DeviceHost {
     }
 
     private void notifySeMifareAccess(byte[] block) {
-        //mListener.onSeMifareAccess(block);
     }
 
     private void notifyTargetDeselected() {
-        //mListener.onCardEmulationDeselected();
     }
 
     private void notifyTransactionListeners(byte[] aid) {
     }
 
     private void notifyTransactionListeners(byte[] aid, byte[] data) {
-        //mListener.onCardEmulationAidSelected(aid, data);
     }
 
     private void notifyUartAbnormal() {
-        //mListener.onUartAbnormal();
     }
 
     private void notifyUimTransactionListeners(byte[] aid, byte[] parameter) {
         Log.e(TAG, "notifyUimTransactionListeners aid=" + aid + ", parameter=" + parameter);
         byte[][] data = { aid, parameter };
-        //mListener.onHciEvtTransaction(data);
     }
 
     public native int[] doGetSecureElementList();

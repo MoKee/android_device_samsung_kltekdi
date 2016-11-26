@@ -251,7 +251,8 @@ public class BeamTransferManager implements Handler.Callback,
     }
 
     public boolean isRunning() {
-        if (mState != STATE_NEW && mState != STATE_IN_PROGRESS && mState != STATE_W4_NEXT_TRANSFER) {
+        if (mState != STATE_NEW && mState != STATE_IN_PROGRESS && mState != STATE_W4_NEXT_TRANSFER
+            && mState != STATE_CANCELLING) {
             return false;
         } else {
             return true;
@@ -326,7 +327,7 @@ public class BeamTransferManager implements Handler.Callback,
             notBuilder.setContentTitle(mContext.getString(R.string.beam_complete));
 
             if (mIncoming) {
-                notBuilder.setContentText(mContext.getString(R.string.beam_touch_to_view));
+                notBuilder.setContentText(mContext.getString(R.string.beam_tap_to_view));
                 Intent viewIntent = buildViewIntent();
                 PendingIntent contentIntent = PendingIntent.getActivity(
                         mContext, mTransferId, viewIntent, 0, null);

@@ -16,7 +16,6 @@
 
 package com.android.nfc.sony;
 
-//import android.nfc.INfcUtilityCallback;
 import android.os.Handler;
 import android.os.Message;
 import android.os.RemoteException;
@@ -27,26 +26,11 @@ public class NativeNfcUtility {
     private static final boolean DBG = false;
     private static final int MSG_WAIT_SIM_BOOT = 1;
     private static boolean mIsLock = false;
-    //private static INfcUtilityCallback mStaticCallback;
     final NativeNfcUtilityHandler mHandler = new NativeNfcUtilityHandler();
     private native int nativeWaitSimBoot(boolean paramBoolean);
   
     void startWaitSimBoot() {
         nativeWaitSimBoot(mIsLock);
-//      if (mStaticCallback != null) {
-//      try {
-//          mStaticCallback.SimBootComplete();
-//      } catch (RemoteException localRemoteException) {
-//          e.printStackTrace();
-//      }
-    }
-  
-//  public boolean waitSimBoot(INfcUtilityCallback callback, boolean isLock) {
-//        mIsLock = isLock;
-//        mStaticCallback = callback;
-//        this.mHandler.sendEmptyMessage(1);
-//        return true;
-//  }
   
     final class NativeNfcUtilityHandler extends Handler {
         NativeNfcUtilityHandler() {

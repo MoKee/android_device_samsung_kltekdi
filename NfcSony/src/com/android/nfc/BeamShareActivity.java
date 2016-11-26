@@ -76,6 +76,15 @@ public class BeamShareActivity extends Activity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        try {
+            unregisterReceiver(mReceiver);
+        } catch (Exception e) {
+            Log.w(TAG, e.getMessage());
+        }
+        super.onDestroy();
+    }
 
     private void showNfcDialogAndExit(int msgId) {
         IntentFilter filter = new IntentFilter(NfcAdapter.ACTION_ADAPTER_STATE_CHANGED);
@@ -143,7 +152,13 @@ public class BeamShareActivity extends Activity {
                 ClipData.Item item = clipData.getItemAt(i);
                 // First try to get an Uri
                 Uri uri = item.getUri();
-                String plainText = item.coerceToText(this).toString();
+                String plainText = null;
+                try {
+                    plainText = item.coerceToText(this).toString();
+                } catch (IllegalStateException e) {
+                    if (DBG) Log.d(TAG, e.getMessage());
+                    continue;
+                }
                 if (uri != null) {
                     if (DBG) Log.d(TAG, "Found uri in ClipData.");
                     tryUri(uri);
